@@ -138,6 +138,312 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-movie-view" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/movie-view/">movie_view</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/movie-view/" class="archive-article-date">
+  	<time datetime="2019-10-08T04:35:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基于vue制作的电影前台展示界面，基于express-mongoDB制作的电影后台"><a href="#基于vue制作的电影前台展示界面，基于express-mongoDB制作的电影后台" class="headerlink" title="基于vue制作的电影前台展示界面，基于express+mongoDB制作的电影后台"></a>基于vue制作的电影前台展示界面，基于express+mongoDB制作的电影后台</h3><ul>
+<li>软件要求:<ul>
+<li>node.js、vue-cli、mongoDB、nginx、npm、pm2</li>
+</ul>
+</li>
+<li>部署要求:<ul>
+<li>前端项目为book_view，后台项目为book_service文件夹；下载到本地后，安装依赖，npm run dev运行movie_view前端项目，占用8080端口用户访问；后台项目下载到本地后，安装依赖，使用pm2 .bin/www运行项目，book_service使用mongoose连接数据库，占用3000端口进行调取数据；前端和后台进行分离，通过api进行调取数据，图片等静态资源存储于boo_service下面的uploads文件夹内，文件地址存储于数据库；注：数据库文件没有传到github，如有需要可以联系我</li>
+</ul>
+</li>
+<li>使用的框架:<ul>
+<li>vue-cli前台搭建</li>
+<li>element-ui 前台后台的ui</li>
+<li>axios 数据的存取</li>
+<li>router路由管理</li>
+<li>vuex状态管理</li>
+<li>multer文件图片的存储</li>
+<li>express后台搭建</li>
+<li>mongoose服务器的连接</li>
+<li>nginx开启http服务和实现跨域</li>
+<li>mongoDB数据库</li>
+<li>webpack打包项目</li>
+</ul>
+</li>
+<li>项目说明:<ul>
+<li>这个项目部属于腾讯云，这个网站的前台架构搭建基于vue-cli，页面基于vue，数据交互基于axios，跨域使用了nginx做了反代理，路由管理基于router，也使用到了vuex，页面布局使用element-ui；关于后台，架构搭建基于express，文件的存储使用multer，数据库使用的是mongoDB；数据库存储数据，当加载页面时，前台通过调用api获取数据库数据对前台进行渲染；当用户操作时，前台通过调用api对数据库数据进行修改</li>
+<li>这个网站的前台实现了电影页面、文章页面、个人主页、站内信等页面的展示；实现了用户的注册、登录、修改密码，用户可以在前台对电影进行评分、点赞、评论，对文章进行评论、评分、点赞，对用户进行主页浏览、主页留言、添加关注、加入黑名单等，浏览站内信、删除站内信、发送站内信、移除黑名单、移除关注列表等；用户也可以在个人主页界面对自己头像、座右铭、简介、标签进行编辑；后台实现了管理员的登录、对用户状态的管理、用户的添加、用户的编辑、用户的删除等功能，实现了对站内通信的一个管理、对站内信的一个删除、对文章评论、电影评论、个人主页评论的审核和删除，实现了对网站首页轮播图、网站首页公告一个删除、编辑、添加，实现了对后台文章的一个删除、添加、编辑，实现了对电影信息的添加、删除、编辑；当然这些编辑的信息并不会修改用户点赞等信息</li>
+<li>这个网站还有许多的需要改进的地方，如购票方面没有设计，如各种电影，文章类型分的不彻底等，数据库数据为个人添加，所以数据量较少且不全面，还有其他的一些细节，性能的优化，慢慢会完善</li>
+<li>如果此开源项目对你有所帮助的话，请到给个star，也算给新人的一个鼓励，未来一起加油吧……  </li>
+</ul>
+</li>
+<li>项目<ul>
+<li><a href="https://github.com/zzdxsongjinlei/movie_view" target="_blank" rel="noopener">项目地址</a></li>
+<li>用户名：songjinlei ，密码：q216050，<br><strong>注：如果进入后台需要体验删除功能，烦请大家先添加一个，再进行删除，谢谢</strong></li>
+</ul>
+</li>
+<li>其他说明<ul>
+<li>这个项目属于个人练习项目，有很多不足，请各位大神不要恶意攻击</li>
+<li>如有有像我这样的萌新，发布项目不成功的话，可以艾特我，毕竟我在那里被坑了好久</li>
+<li>本人前端新人，致力于前端学习，正处于这个学习阶段，同处于这一阶段的欢迎来互相交流，这个项目我也做了标注，如果需要大家可以自取，谢谢</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/movie-view/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bihu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/bihu/">bihu</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/bihu/" class="archive-article-date">
+  	<time datetime="2019-10-08T04:23:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一个基于vue实现的币乎网站"><a href="#一个基于vue实现的币乎网站" class="headerlink" title="一个基于vue实现的币乎网站"></a>一个基于vue实现的币乎网站</h3><ul>
+<li>实现功能: 一个基于vue实现的币乎网站，相对来说比cnode复杂，实现了登陆界面、注册界面、搜索界面可实现搜索，文章显示，微文的显示，用户的详情页，文章的详情页，和相关的一些评论，模块的展示；相对来说比较复杂，适合实战项目，比较好的一点是把部分公共方法和axios单独到utils文件夹内，过滤函数也进行全局注册，只需在vue进行调用，比较好维护；数据api取自币乎</li>
+<li>使用技术: 使用vue-cli构建开发环境;vue-router实现路由管理;element-ui进行界面及tab;axios进行数据传输;webpack进行打包</li>
+<li><a href="https://github.com/zzdxsongjinlei/bihu" target="_blank" rel="noopener">项目地址</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/bihu/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-cnode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/cnode/">cnode</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/cnode/" class="archive-article-date">
+  	<time datetime="2019-10-08T04:12:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一个使用vue制作的简易cnode网站"><a href="#一个使用vue制作的简易cnode网站" class="headerlink" title="一个使用vue制作的简易cnode网站"></a>一个使用vue制作的简易cnode网站</h3><ul>
+<li>实现功能: 一个基于vue实现的cnode网站，相对来说比较简单，实现了首页文章的显示和分类，文章的详情页，用户的详情页，相对来说比较简单，适合入门实战，比较好的一点是把部分公共方法和axios单独到utils文件夹内，只需在vue进行调用，比较好维护；数据api取自cnode</li>
+<li>使用技术: 使用vue-cli构建开发环境;vue-router实现路由管理;element-ui进行界面及tab;axios进行数据传输;webpack进行打包</li>
+<li><a href="https://github.com/zzdxsongjinlei/cnode" target="_blank" rel="noopener">项目地址</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/cnode/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-pos" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/pos/">pos系统</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/pos/" class="archive-article-date">
+  	<time datetime="2019-10-08T03:49:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一个基于vue简单的点餐系统"><a href="#一个基于vue简单的点餐系统" class="headerlink" title="一个基于vue简单的点餐系统"></a>一个基于vue简单的点餐系统</h3><ul>
+<li>实现功能: 基于vue里实现的一个简单在线点餐系统，可以实现点餐，删除、增加商品，商品总价计算，结账等功能</li>
+<li>使用技术: mockplus进行草图设计;使用vue-cli构建开发环境;vue-router实现路由管理;element-ui进行界面及tab;axios进行数据传输;阿里的iconfont图标库;webpack进行打包</li>
+<li>参考: 技术胖老师的 <a href="http://jspang.com/2017/05/22/vuedemo/" target="_blank" rel="noopener">Vue实战视频-快餐店收银系统</a> </li>
+<li><a href="https://github.com/zzdxsongjinlei/pos" target="_blank" rel="noopener">项目地址</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/pos/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-bus" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
